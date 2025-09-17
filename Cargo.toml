@@ -1,0 +1,28 @@
+[package]
+name = "kambo-hho"
+version = "0.1.0"
+edition = "2024"
+authors = ["Heric da Silva Cruz <hericsilvaho@gmail.com>"]
+description = "Implementation of the Harris Hawk Optimization (HHO) metaheuristic"
+license = "MIT"
+repository = "https://github.com/hscHeric/kambo-hho"
+readme = "README.md"
+keywords = ["optimization", "hho", "algorithm", "metaheuristic"]
+categories = ["science", "algorithms", "data-structures"]
+
+[dependencies]
+rand = "0.9.2"
+thiserror = "2.0.16"
+cfg-if = "1.0.3"
+rayon = { version = "1.11.0", optional = true }
+serde = { version = "1.0", features = ["derive"], optional = true }
+serde_json = { version = "1.0", optional = true }
+
+[dev-dependencies]
+criterion = "0.7.0"
+
+[features]
+rayon = ["dep:rayon"]
+serde = ["dep:serde", "dep:serde_json"]
+simd = []
+full = ["rayon", "serde", "simd"]
