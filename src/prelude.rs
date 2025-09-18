@@ -1,3 +1,2 @@
-pub use crate::core::{
-    BoundaryPolicy, Bounds, BoundsError, Genome, Maximization, Minimization, Objective,
-};
+pub use crate::core::{Decoder, DecoderError};
+
